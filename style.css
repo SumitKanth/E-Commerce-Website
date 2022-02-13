@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{              /* Root is to save the color in some variable and use direct in our elements */
+
+    --primary: indianred;
+    --secondary: rgba(15, 29, 10, 0.849);
+    --light: #2f3640;
+
+}
+
+/* Header Section Start*/
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+/* navOne  */
+.navOne{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 2px 0 3px #808080;  /* used to give shadow */
+    align-items: center;
+}
+
+.navOne .left{
+    flex-basis: 50%;   /* flex-basic --> Used to adjust the width of the flex-items */
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navOne .left a{
+    text-decoration: none;
+    color: var(--primary);  /* var() --> var is used for the variable we have taken */
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.navOne .right{
+    display: flex;
+    justify-content: center;
+    flex-basis: 50%;
+
+
+}
+
+.navOne .right i{
+    font-size: 20px;
+    margin: 0 15px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;  /* transfrom property to active krne ke lie transition lgaya h */
+}
+
+.navOne .right i:hover{
+    transform: rotate(360deg);
+}
+
+
+/* nav Two */
+
+.navTwo{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.navTwo .navTwo-left, .navTwo .navTwo-center, .navTwo .navTwo-right{
+    flex-basis: 30%;
+    cursor: pointer;
+    margin: auto;
+}
+
+.navTwo .navTwo-left i{
+    margin-left: 15px;
+}
+
+.navTwo .navTwo-center h1{
+    color: var(--primary);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.navTwo .navTwo-center span{
+    color: var(--secondary);
+}
+
+.navTwo .navTwo-center p{
+    color: #808080;
+    font: 15px;
+    margin-top: 5px;
+}
+
+.navTwo .navTwo-right i{
+    margin: 0px 5px;
+
+}
+
+/* navbar Three */
+
+.navThree{
+    width: 100%;
+    height: 70px;
+    line-height: 70px; /* giving the height to all the li in the element */
+}
+
+.navThree ul{
+    text-align: center;
+}
+
+.navThree ul li{
+    display: inline-block; /* now it will not take full height and width */
+    width: 150px;
+    list-style: none;
+    position: relative; /* mtlb apni jgh pr hi rahega*/
+    z-index: 99; /* kioki ye apne top pr rhe */
+}
+
+.navThree ul li a{
+    text-decoration: none;    
+    display: block;
+    color: #000;
+    font-weight: 500;
+}
+
+.navThree ul li a:hover{
+    color: var(--primary);
+}
+
+.navThree ul li a i{
+    margin: 0 5px;
+    color: var(--primary);
+}
+
+#primary{
+    color: var(--primary);
+}
+
+.navThree ul ul{
+    position: absolute; /* Mtlb apne parent ke respect m kaam krega, jo upr diclare h */
+    top: 70px;
+    left: 0;
+    display: none; /* gayab ho jaega */
+}
+
+.navThree ul ul li{
+    background-color: #fff;
+    border-bottom: 1px solid var(--primary);
+}
+
+.navThree ul li:hover>ul{  /* drop down wali li pr jb hover krenge to jo ul h usli diplay block krdo */
+    display: block;
+}
+
+/* Featured Section Starts */
+    .featured{
+        width: 100%;
+        height: 60vh;
+        background: linear-gradient(to right , rgba(0, 0, 0, 0.8) 20%, rgba(255, 255, 355,0.2)), url('img/g1.jpg');
+        /* upr 'to right', ka mtlb photo ke right m aa jaega color or '20%' mtlb pic ka 20% lega */
+        background-size: cover;
+        background-position: top;
+        position: relative;
+
+    }
+
+    .featured-text{
+        max-width: 500px; /* mtlb max-widht 500px h usse km nii hogi */
+        position: absolute;
+        top: 50% /* % m isi lie kioki responsive rhe */;
+        left: 10%;
+        color: #fff;
+        padding: 10px;
+        font-size: 2rem;
+        text-align: center;
+        font-family: 'Akaya Kanadaka', cursive;
+    }
+
+    .featured-text button{
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        margin: 20px 0;
+        background-color: var(--secondary);
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+/* Featured Section Ends  */
+
+/* Header Section End  */
+
+
+
+/* Latest Section Starts */
+.latest{
+    padding: 50px 100px; /* Ye text ko thora niche r side m kr deta h */
+}
+
+.product-intro{
+    text-align: center;
+}
+
+.product-intro h1{
+    color: var(--primary);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.product-intro h1 span{
+    color: var(--secondary);
+}
+
+.product-intro p{
+    color: #808080;
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+/* Card Containers Starts*/
+
+    .cards-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        margin: 4rem 0px;
+    }
+
+    .cards-container .card{
+        flex-basis: 20%;
+        padding: 0.8rem;
+        position: relative; /* kioki '.card::before' wale h iska kaam aaega // line no. 292 pr */
+
+    }
+    
+    .card img{
+        width: 100%;
+        transition: 0.5s ease-in-out;
+    }
+
+    .card i{
+        color: #daa520;
+        margin: 10px 0px;
+    }
+
+    .card button{
+        background-color: var(--secondary);
+        outline: none;
+        border: none;
+        color: #fff;
+        margin: 15px 0;
+        padding: 5px 20px;
+    }
+
+    .card:hover img, .card:hover h1{
+        width: 80%;
+        color: var(--primary);
+    }
+
+    .card::before{
+        content: '20% off';
+        width: 25%;
+        height: 25px;
+        color: #fff;
+        line-height: 25px;
+        position: absolute;
+        top: 0;
+        letter-spacing: 0;
+        background-color: var(--primary);
+        padding: 0px 4px;
+        transform: rotate(-20deg);
+        border-radius: 4px;
+
+    }
+
+    /* Cards Container Ends  */
+
+/* Latest Section Ends  */
+
+
+
+/* Trends Section Starts */
+    .trends{
+        padding: 50px 100px;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    /* swipper css below from the swipper.js */
+    .trends .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+    .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+      }
+
+    .trends .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    /* End of the swipper*/
+
+/* Trends Section Ends  */
+
+
+/* Footer Starts  */
+
+    .footer{
+        background-color: var(--secondary);
+        color: #fff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        height: 20vh;
+        padding: 2rem;
+    }
+
+    .footer div{
+        flex-basis: 30%;
+    }
+
+    .footer h1{
+        letter-spacing: 0.2rem;
+    }
+
+    .footer h1 span{
+        color: var(--primary);
+    }
+
+    .footer p{
+        font-size: 1rem;
+    }
+
+    .footer i{
+        margin: 0 5px;
+    }
+
+
+/* Footer Ends  */
+
+
+
+/* Media Query Start  */
+    @media only screen and (max-width: 772px){
+        /* Navbar One mediaQuery Starts  */
+        .navOne{
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            height: 20vh;
+        }
+
+        .navOne .left span{
+            padding: 0 10px;
+        }
+
+        .navOne .right i{
+            font-size: 15px;
+            margin: 0 5px;
+        }
+        /* Navbar One mediaQuery Ends  */
+        
+
+
+        /* Navbar Two mediaQuery Starts  */
+        .navTwo{
+            width: 100%;
+            height: 17vh;
+                    
+        }
+
+        .navTwo .navTwo-left i{
+            margin-left: 0;
+        }
+
+        .navTwo .navTwo-center h1{
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .navTwo .navTwo-center p{
+            font-size: 10px;
+        }
+        /* Navbar Two mediaQuery Ends  */
+
+
+        /* Navbar Three mediaQuery Starts  */
+        .navThree{
+            display: none;
+        }
+        /* Navbar Three mediaQuery Ends  */
+
+
+        /* FeaturesSection mediaQuery Starts  */
+        .featured{
+            background-attachment: fixed;  /* image will get fixed */
+        }
+        /* FeaturesSection mediaQuery Ends  */
+
+
+        /* Latest mediaQuery Starts  */
+        .latest{
+            padding: 0px 50px;
+        }
+
+        .cards-container{
+            margin: 2rem 0;
+            flex-direction: column; /* line no. 441 pr wale ki jgh ye use kia h */
+        }
+
+        .cards-container .card{
+            flex-basis: 100%; /* Ye wala kaam nii kia */
+            text-align: center; 
+            font-size: 30px;
+        }
+        /* Latest mediaQuery Ends  */
+
+
+        /* Footer Section Starts  */
+        .footer{
+            height: 40%;
+        }
+
+        .footer div{
+            margin: 10px 0;
+        }
+
+        /* Footer Section Ends  */
+
+
+
+
+        
+
+  
+
+    }
+/* Media Query Ends  */
